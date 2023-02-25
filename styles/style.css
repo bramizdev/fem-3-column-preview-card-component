@@ -147,7 +147,7 @@ body {
 
 @media (min-width: 58rem) {
   body {
-    --padding-body: 1rem;
+    --padding-body: 0;
 
     display: grid;
     align-items: center;
