@@ -1,0 +1,242 @@
+/* Custom properties */
+:root {
+  --clr-orange-500: hsl(31, 77%, 52%); /* Sedans */
+  --clr-cyan-500: hsl(184, 100%, 22%); /* Suvs */
+  --clr-cyan-700: hsl(179, 100%, 13%); /* Luxury */
+
+  --clr-neutral-100: hsla(0, 0%, 100%, 0.75); /* Paragrahps */
+  --clr-neutral-200: hsl(0, 0%, 95%); /* Background, headings, buttons */
+
+  --ff-titles: 'Big Shoulders Display', cursive;
+  --ff-base: 'Lexend Deca', sans-serif;
+
+  --fs-500: 0.9375rem;
+  --fs-900: 2.5rem;
+}
+
+/* CSS Reset */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Remove button styling
+*/
+button,
+input[type='submit'],
+input[type='reset'] {
+  all: unset;
+  cursor: pointer;
+}
+/*
+  10. Remove list styling
+*/
+li {
+  list-style-type: none;
+}
+/*
+  11. Headings line-height adjusted
+*/
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+/* Utilities */
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: var(--clr-neutral-200);
+  padding: 0.75rem 0;
+  border-radius: 2rem;
+  text-align: center;
+  max-width: 9.25rem;
+  transition: color, border, background-color;
+  transition-duration: 0.2s;
+}
+
+/* General styling */
+body {
+  --padding-body: 5.625rem 1.5rem 0.5rem 1.5rem;
+
+  padding: var(--padding-body);
+  font-family: var(--ff-base);
+  color: var(--clr-neutral-100);
+  font-size: var(--fs-500);
+}
+
+/* Options */
+.options {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 20.375rem;
+}
+
+.options__option {
+  display: flex;
+  flex-direction: column;
+  gap: 1.55rem;
+  padding: 3rem;
+}
+
+.option__title {
+  display: flex;
+  gap: 1.75rem;
+  flex-direction: column;
+  font-family: var(--ff-titles);
+  color: var(--clr-neutral-200);
+  font-size: var(--fs-900);
+  text-transform: uppercase;
+}
+
+/* Sedans */
+.sedans {
+  background-color: var(--clr-orange-500);
+}
+
+.option__title[data-icon='sedans']::before {
+  content: '';
+  width: 64px;
+  height: 40px;
+  background: url('../images/icon-sedans.svg');
+}
+
+.sedans .btn {
+  color: var(--clr-orange-500);
+  border: 1px solid var(--clr-orange-500);
+}
+
+.sedans .btn:is(:hover, :focus) {
+  color: var(--clr-neutral-200);
+  border: 1px solid var(--clr-neutral-200);
+  background-color: var(--clr-orange-500);
+  outline: transparent;
+}
+
+/* Suvs */
+.suvs {
+  background-color: var(--clr-cyan-500);
+}
+
+.option__title[data-icon='suvs']::before {
+  content: '';
+  width: 64px;
+  height: 40px;
+  background: url('../images/icon-suvs.svg');
+}
+
+.suvs .btn {
+  color: var(--clr-cyan-500);
+  border: 1px solid var(--clr-cyan-500);
+}
+
+.suvs .btn:is(:hover, :focus) {
+  color: var(--clr-neutral-200);
+  border: 1px solid var(--clr-neutral-200);
+  background-color: var(--clr-cyan-500);
+  outline: transparent;
+}
+
+/* Luxury */
+.luxury {
+  background-color: var(--clr-cyan-700);
+}
+
+.option__title[data-icon='luxury']::before {
+  content: '';
+  width: 64px;
+  height: 40px;
+  background: url('../images/icon-luxury.svg');
+}
+
+.luxury .btn {
+  color: var(--clr-cyan-700);
+  border: 1px solid var(--clr-cyan-700);
+}
+
+.luxury .btn:is(:hover, :focus) {
+  color: var(--clr-neutral-200);
+  border: 1px solid var(--clr-neutral-200);
+  background-color: var(--clr-cyan-700);
+  outline: transparent;
+}
+/* Footer */
+footer {
+  padding: 1rem;
+  text-align: center;
+}
